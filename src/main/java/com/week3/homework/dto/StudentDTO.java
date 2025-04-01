@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.Set;
 
 
 @NoArgsConstructor
@@ -16,6 +17,7 @@ public class StudentDTO {
 
     private Long id;
     private String name;
-    private List<ProfessorEntity> professor;
-    private List<SubjectEntity> subject;
+    private List<ProfessorSummaryDTO> professor;
+    private List<SubjectDTO> subject;
+    private AdmissionRecordSummaryDTO studentRecord;
 }

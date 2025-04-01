@@ -17,7 +17,6 @@ public class ProfessorDTO {
 
     private Long id;
     private String name;
-    private List<SubjectEntity> subjects;
-
-    private List<StudentEntity> student;
+    private List<SubjectSummaryDTO> subjects;
+    private List<StudentSummaryDTO> student;
 }

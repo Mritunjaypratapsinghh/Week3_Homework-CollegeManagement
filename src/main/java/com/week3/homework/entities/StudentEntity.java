@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -17,10 +18,9 @@ public class StudentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-    @ManyToMany(mappedBy = "students")
-    @JsonIgnore
+    @ManyToMany
+    @JoinTable(name = "Student_Professor",joinColumns = @JoinColumn(name = "professor_id"), inverseJoinColumns = @JoinColumn(name = "student_id"))
     private List<ProfessorEntity> professor;
     @ManyToMany
     @JoinTable(name = "Subjects Chosen", joinColumns = @JoinColumn(name = "student_id"), inverseJoinColumns = @JoinColumn(name = "subjects_id"))

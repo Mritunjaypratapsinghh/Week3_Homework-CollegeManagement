@@ -26,6 +26,16 @@ public class StudentController {
         return studentService.createNewStudent(newStudent);
     }
 
+    @PatchMapping("/{studentId}/subject/{subjectId}")
+    public StudentDTO AssignSubjectToStudent(@PathVariable Long studentId, @PathVariable Long subjectId){
+        return studentService.AssignSubjectToStudent(studentId,subjectId);
+    }
+
+    @PatchMapping("/{studentId}/professor/{professorId}")
+    public StudentDTO AssignProfessorToStudent(@PathVariable Long studentId, @PathVariable Long professorId){
+        return studentService.AssignProfessorToStudent(studentId,professorId);
+    }
+
 
 }
 
